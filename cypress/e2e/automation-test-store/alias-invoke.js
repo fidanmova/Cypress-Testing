@@ -36,5 +36,8 @@ describe("Alias and Invoke", () => {
     //     cy.log($el.text());
     //   });
     cy.get(".thumbnail").find(".oneprice").invoke("text").as("itemPrice");
+    cy.get("@itemPrice").then(($linkText) => {
+      var itemPrice = $linkText.split("$");
+    });
   });
 });
